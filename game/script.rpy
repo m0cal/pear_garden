@@ -8,8 +8,14 @@ label start:
 
     call scene_2
 
-    # call 脸谱
+    # call 脸谱游戏
 
     call scene_3
 
+    # call 躲避家丁游戏
+
+    call scene_4
+
+    call scene_5
+    
     return
