@@ -1,5 +1,5 @@
 ﻿label start:
-
+    show screen ooc_overlay
     call intro
 
     call scene_1
