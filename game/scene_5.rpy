@@ -1,5 +1,5 @@
-define l = Character("衙役")
-define p = Character("贾斯文", color="#a52a2a")
+define y = Character("衙役")
+define p1 = Character("贾斯文", color="#a52a2a")
 define z = Character("张清")
 define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
@@ -11,7 +11,7 @@ label scene_5:
 
     # 县衙背景
     z "升堂！"
-    l "升——堂——"
+    y "升——堂——"
 
     z "堂下何人？报上名来！"
     s "生员兰中玉，系本县庠生，今日冒渎虎威，非为私利，实因家门不幸，遭遇横祸，特来向大人求一纸公道！"
@@ -41,7 +41,7 @@ label scene_5:
     "惊堂木被重重拍下。"
     z "公堂之上，岂容尔咆哮喧哗！肃静！"
 
-    p "大人请千万看清楚了！这婚书上「立此为证」这白纸黑字写的是清清楚楚！" # 非常重要的一句话喔！
+    p1 "大人请千万看清楚了！这婚书上「立此为证」这白纸黑字写的是清清楚楚！" # 非常重要的一句话喔！
     
     "洪彦龙看了我一眼，一副得意的模样。"
     
