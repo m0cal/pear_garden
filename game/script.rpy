@@ -1,6 +1,4 @@
-﻿
-
-label start:
+﻿label start:
 
     call intro
 
