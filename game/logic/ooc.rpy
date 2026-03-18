@@ -3,7 +3,7 @@
 ## 范围：0 ~ 100，由选项与小游戏结果增减，影响最终结局
 
 # 当前周目 OOC 值，新游戏时重置，会随存档保存
-default ooc = 100
+default ooc = 0
 
 #ooc 上下限
 define OOC_MIN = 0
