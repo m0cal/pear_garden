@@ -7,6 +7,7 @@
     call scene_2
 
     # call 脸谱游戏
+    call screen jigsaw
 
     call scene_3
 
