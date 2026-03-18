@@ -12,7 +12,7 @@
     call scene_3
 
     # call 躲避家丁游戏
-
+    call screen maze_game
     call scene_4
 
     call scene_5
