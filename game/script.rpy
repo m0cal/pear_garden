@@ -1,20 +1,20 @@
 ﻿label start:
     show screen ooc_overlay
-    call intro
+    call intro from _call_intro
 
-    call scene_1
+    call scene_1 from _call_scene_1
 
-    call scene_2
+    call scene_2 from _call_scene_2
 
     # call 脸谱游戏
     call screen jigsaw
 
-    call scene_3
+    call scene_3 from _call_scene_3
 
     # call 躲避家丁游戏
     call screen maze_game
-    call scene_4
+    call scene_4 from _call_scene_4
 
-    call scene_5
+    call scene_5 from _call_scene_5
     
     return
