@@ -26,4 +26,4 @@
 /strings.json
 
 # Editor related
-.vscode/
+.vscode/*
