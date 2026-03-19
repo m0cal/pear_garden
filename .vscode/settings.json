@@ -126,5 +126,9 @@
             }
         ]
     },
+<<<<<<< HEAD
     "renpyWarp.sdkPath": "~/Project/game/renpy-8.5.2-sdk"
+=======
+    "renpyWarp.sdkPath": "e:\\renpy-8.5.2-sdk"
+>>>>>>> origin/lrj_branch
 }

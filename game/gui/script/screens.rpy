@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## 初始化
 ################################################################################
 
@@ -233,7 +233,7 @@ screen quick_menu():
     ## 确保该菜单出现在其他屏幕之上，
     zorder 100
 
-    if quick_menu:
+    if quick_menu and not getattr(store, "_in_hanzi_trace", False):
 
         hbox:
             style_prefix "quick"
@@ -252,8 +252,8 @@ screen quick_menu():
 ## 此代码确保只要用户没有主动隐藏界面，就会在游戏中显示 quick_menu 屏幕。
 init python:
     config.overlay_screens.append("quick_menu")
-
-default quick_menu = True
+    if not hasattr(store, "quick_menu"):
+        store.quick_menu = True
 
 style quick_menu is hbox
 style quick_button is default
