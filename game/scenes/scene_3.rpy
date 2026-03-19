@@ -73,7 +73,15 @@ label scene_3:
 
     p1 "这婚书，不仅要写得真，还要有特定的字，方能显得它喜庆又正式！"
 
-    # call 婚书游戏
+    $ _skipping = False
+    call screen hanzi_trace
+    $ _skipping = True
+    if _return == "success":
+        # 接：金光一闪、印在婚书上、洪彦龙大喜等剧情
+        pass
+    elif _return == "cheat":
+        # 接：同成功反馈（外挂次数与 OOC 已在 hanzi_trace 中处理）
+        pass
 
     p1 "国舅爷，咱们还得加上一句：秀才兰中玉立此为证！"
 

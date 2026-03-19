@@ -16,5 +16,10 @@ init python:
             ooc = OOC_MIN
         elif value > OOC_MAX:
             ooc = OOC_MAX
-        else:   
-            ooc = value     
+        else:
+            ooc = value
+
+    def ooc_add(amount: int):
+        """增减 OOC，自动限制在 [OOC_MIN, OOC_MAX]"""
+        global ooc
+        ooc = max(OOC_MIN, min(OOC_MAX, ooc + amount))
