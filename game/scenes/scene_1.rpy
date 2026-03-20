@@ -1,6 +1,26 @@
 define l = Character('小莲', color="#c8a2c8")
 define p = Character('我', color="#a52a2a")
 
+image lotus_weak = "images/lotus_weak.jpg"
+image lotus_handkerchief = "images/lotus_handkerchief.png"
+image bg hong_living = "images/bg_hong_livingroom.jpg"
+image bg county_night = "images/bg_county_office_night.jpg"
+image bg county_study = "images/bg_county_study.jpg"
+image h_angry = "images/hong_angry.png"
+image h_scared = "images/hong_scared.png"
+image h_threat = "images/hong_threat.png"
+image y_suspicious = "images/yayi_suspicious.png"
+image y_normal = "images/yayi_normal.png"
+image cg_lan_mother = "images/cg_lan_mother.jpg"
+image item_book = "images/item_book.png"
+image item_book_blood = "images/item_book_blood.png"
+image item_handkerchief_blood = "images/item_handkerchief_blood.png"
+image item_bun = "images/item_bun.png"
+image item_contract_evidence = "images/item_contract_evidence.png"
+image lan_normal = "images/lan_normal.png"
+image magistrate_normal = "images/magistrate_normal.png"
+image h_normal = "images/hong_normal.png"
+
 label scene_1:
     scene bg lovelyhome
     "我揣着怀里尚带余温的半个窝头，推开那扇吱呀作响的破木门时，天色已近黄昏。"
@@ -13,7 +33,8 @@ label scene_1:
 
     "她听见动静，挣扎着想坐起来，却引发了一阵撕心裂肺的咳嗽。"
     # 震动效果，音效
-    show lotus normal at right
+    scene lotus_weak
+    with dissolve
 
     l "哥...你回来了？"
 
@@ -25,18 +46,25 @@ label scene_1:
     "我努力让自己的声音听起来轻松些，从怀里掏出那半个窝头。"
 
     p "看，今天班主赏的白面窝头，还热乎着呢。"
+    show item_bun at center
+    with dissolve
 
     l "哥...你吃...我...我不饿..."
 
     "傻丫头，连撒谎都不会。"
 
     p "我早吃过了，后台点心多着呢。快吃，吃了才有力气。等哥成了角儿，天天给你买肉包子。"
+    hide item_bun
 
     # 咳嗽声
 
     l "【剧烈咳嗽】"
+    "她急忙用手帕捂住嘴，摊开时，帕角已晕开一抹刺目的红。"
+    show item_handkerchief_blood at center
+    with dissolve
 
     p "小莲！"
+    hide item_handkerchief_blood
 
     # 切换立绘
     l "没事的，哥 …… 我今天好多了。"

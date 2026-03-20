@@ -5,9 +5,16 @@ define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
 
 label scene_5:
+    scene bg county_night
+    with fade
+
     # 黑屏
     "县衙公堂。"
     "今天就是尘埃落定的日子。"
+    show magistrate_normal at center
+    with dissolve
+    show h_normal at left
+    with dissolve
 
     # 县衙背景
     z "升堂！"
@@ -21,6 +28,8 @@ label scene_5:
     
     z "兰中玉，你且将此事经过，从实招来！"
 
+    show lan_normal at right
+    with dissolve
     s "生员素来谨守「礼义廉耻」四字。不料竟被被告破门劫掠掳走舍妹，威逼成亲。我兄妹不从，他又私设牢狱，将生员囚于府中。"
     s "生员今日不仅是为舍妹求公道，更是为本县的圣人之教、纲常法纪求公道！被告洪公，读圣贤书，却行禽兽事，光天化日之下夺人妻女，此风一开，我县斯文扫地，纲常何在......"
 
@@ -33,6 +42,8 @@ label scene_5:
     h "本爷看这当哥哥的之所以闹事，不过是嫌银子没给够，想坐地起价罢了！因此才把他请来府中晓之以理。"
 
     h "贾师爷，把那小子亲笔所写的婚书拿来！"
+    show item_contract_evidence at center
+    with dissolve
 
     "我将那一份「婚书」呈上张清。"
 
@@ -51,18 +62,22 @@ label scene_5:
     z "兰中玉。"
     z "本县问你——"
     z "你平日写书，是用「谨立」二字，还是用「立此为证」？"
+    "案上的婚书摊得笔直，落款与措辞的破绽在灯下无所遁形。"
 
     "兰中玉抬起头，一脸疑惑。"
 
     s "小人...不曾记得自己写过「立此为证」。"
+    hide item_contract_evidence
     
     z "洪公，你这婚书，用词粗直，更像牙行、保正写的卖契，不像一个秀才的笔墨。"
 
     "豆大的汗珠从洪彦龙的额头上滚落。"
+    show h_scared at left
     "突然，洪彦龙狞笑起来。"
 
     h "张清，你是什么意思？这婚书上白纸黑字写着将他妹子许配与我。难道还要对这小子用什么词咬文嚼字？"
     h "我劝你不要忘了...要是如此本末倒置，颠倒黑白，那便是与我作对，与贵妃作对，与当朝天子作对！到时候你脖子上掉的可就不只是这一顶乌纱帽了——"
+    show h_angry at left
 
     "一声惊堂木响起。"
     z "住嘴！"

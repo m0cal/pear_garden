@@ -3,6 +3,9 @@ define p1 = Character("贾斯文", color="#a52a2a")
 define z = Character("张清")
 
 label scene_4:
+    scene bg county_night
+    with fade
+
     "知县张清据说为人刚正不阿。"
     "如果我能在审判前主动揭发洪彦龙的罪行，或许兰家兄妹就能逃脱这个恶魔的魔爪。"
     "我整理了一下斗篷，从阴影中走出。"
@@ -10,6 +13,7 @@ label scene_4:
     y "站住！什么人？"
     p1 "差爷恕罪！小人是洪彦龙洪国舅府上的师爷贾斯文，有十万火急的密信，必须亲手呈交知县大人"
     y "洪彦龙的师爷？"
+    show y_suspicious at left
     "明显能看出，衙役的态度明显更谨慎了"
     y "这么晚了，有何要事？"
 
@@ -17,6 +21,7 @@ label scene_4:
         "直接掏出银子":
             p1 "请差爷行个方便，此事关乎大人清誉，耽搁不得啊！"
             "衙役皱了皱眉毛，虽然看起来还是不太信任我的样子，但最终还是点了点头"
+            show y_normal at left
             y "你等着，我去通报。"
         "尝试用洪彦龙的身份压他":
             p1 "此信是国舅亲笔所写要给知县大人，鄙人已经说了十万火急，若是因为你们耽搁了，且看知县大人如何处置你们！"
@@ -28,7 +33,11 @@ label scene_4:
     "不知道过了多久，衙役回来了"
     y "进去吧，知县大人在书房等你。"
 
+    scene bg county_study
+    with dissolve
     "我走进张清的书房，他正在书案后坐着，手里捧着一卷书。"
+    show magistrate_normal at center
+    with dissolve
 
     z "你是洪彦龙的师爷？"
     "我扑通一声跪倒在案前。"

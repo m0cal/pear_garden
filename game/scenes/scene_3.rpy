@@ -4,12 +4,16 @@ define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
 
 label scene_3:
+    scene bg hong_living
+    with fade
+
     # 由暗转明 晕眩
     # 愤怒
 
     "头好晕..."
     "我感觉自己像是被什么东西狠狠地撞了一下，眼前一片模糊。"
-    show h normal at left
+    show h_normal at left
+    with dissolve
     a "把那兰中玉给我拉上来"
 
     "兰中玉...这个名字好熟悉..."
@@ -28,6 +32,8 @@ label scene_3:
     h "本国舅一时欢喜，起了收她入府的念头，也算抬举你兰家门楣。"
     h "这等好事，你还有什么不愿意的？"
 
+    show lan_normal at right
+    with dissolve
     s "国舅爷抬爱，草民惶恐。只是舍妹出身寒门，不通礼数，亦无福分，实不敢高攀国舅府门。此事，还请国舅爷另择良配。"
 
     # 冷笑
@@ -45,6 +51,7 @@ label scene_3:
     s "强求之事，终非正道..."
 
     h "来人啊！把这不识抬举的狗奴才，给我拖下去！"
+    show h_angry at left
 
     s "草民不敢从命！"
     # 震动特效 拖走和拍桌子的声音
@@ -70,6 +77,7 @@ label scene_3:
     
     p1 "国舅爷，强扭的瓜不甜。咱们得用计，伪造一份婚书，让他哑巴吃黄连！"
     h "哦？怎么个伪造法？"
+    show h_threat at left
 
     p1 "这婚书，不仅要写得真，还要有特定的字，方能显得它喜庆又正式！"
 
@@ -77,8 +85,9 @@ label scene_3:
     call screen hanzi_trace
     $ _skipping = True
     if _return == "success":
-        # 接：金光一闪、印在婚书上、洪彦龙大喜等剧情
-        pass
+        show item_contract_evidence at center
+        with dissolve
+        p1 "这婚书……不仅要写得真，更要留下致命的破绽。"
     elif _return == "cheat":
         # 接：同成功反馈（外挂次数与 OOC 已在 hanzi_trace 中处理）
         pass
@@ -87,6 +96,9 @@ label scene_3:
 
     h "妙！妙啊！贾师爷果然一肚子坏水！重重有赏！"
 
+    scene cg_lan_mother
+    with fade
+    "夜色沉沉，兰母披发赤足奔至县衙门前，一声惊堂鼓震得街巷尽醒。"
     "几天后，听说兰中玉被绑架的兰母到县衙击鼓报了案。"
     "明天就是升堂的日子。"
     "在这之前我还有一些事情要做..."
