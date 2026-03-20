@@ -16,5 +16,8 @@
     call scene_4 from _call_scene_4
 
     call scene_5 from _call_scene_5
+
+    # 正常通关时关闭 OOC 浮层，避免 UI 残留。
+    hide screen ooc_overlay
     
     return
