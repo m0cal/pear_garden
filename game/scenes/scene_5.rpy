@@ -5,7 +5,7 @@ define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
 
 label scene_5:
-    scene bg county_night
+    scene bg county_court
     with fade
 
     # 黑屏
@@ -14,14 +14,14 @@ label scene_5:
 
     # 县衙背景
     z "升堂！"
-    show magistrate_normal at center
+    show magistrate normal at center
     with dissolve
-    show h_normal at left
+    show h normal at left
     with dissolve
     y "升——堂——"
 
     z "堂下何人？报上名来！"
-    show lan_normal at right
+    show lan normal at right
     with dissolve
     s "生员兰中玉，系本县庠生，今日冒渎虎威，非为私利，实因家门不幸，遭遇横祸，特来向大人求一纸公道！"
     h "县尊请了，本人洪彦龙，家姐便是宫里的贵妃。论理，你我本是同僚，今日不过是因为家宅一点琐事，闹到了大人堂前。本人这厢给大人一个面子，亲自走这一趟，咱们把话说开便是。"
@@ -42,7 +42,7 @@ label scene_5:
     h "本爷看这当哥哥的之所以闹事，不过是嫌银子没给够，想坐地起价罢了！因此才把他请来府中晓之以理。"
 
     h "贾师爷，把那小子亲笔所写的婚书拿来！"
-    play displayable vid_contract_unfold
+    $ renpy.movie_cutscene("videos/contract_unfold.webm")
     show item_contract_evidence at center
     with dissolve
 
@@ -73,12 +73,12 @@ label scene_5:
     z "洪公，你这婚书，用词粗直，更像牙行、保正写的卖契，不像一个秀才的笔墨。"
 
     "豆大的汗珠从洪彦龙的额头上滚落。"
-    show h_scared at left
+    show h scared at left
     "突然，洪彦龙狞笑起来。"
 
     h "张清，你是什么意思？这婚书上白纸黑字写着将他妹子许配与我。难道还要对这小子用什么词咬文嚼字？"
     h "我劝你不要忘了...要是如此本末倒置，颠倒黑白，那便是与我作对，与贵妃作对，与当朝天子作对！到时候你脖子上掉的可就不只是这一顶乌纱帽了——"
-    show h_angry at left
+    show h angry at left
 
     "一声惊堂木响起。"
     z "住嘴！"
@@ -86,6 +86,8 @@ label scene_5:
     h "张...你...你竟敢！"
     z "阁下身为国舅，位列乡绅，受国厚恩，不思报效，反而欺行霸市、强抢民女、上欺天子、下压黎民！本县念在贵妃天子在上，本想保全阁下名声，奈何你执迷不悟！"
     z "此案情理难容，法不能赦，本官先打你五十大板，再行发落！"
+
+    return
 
 
     
