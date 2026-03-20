@@ -1,7 +1,6 @@
 # 汉字描红（婚书两字）
 # 返回： "success" 或 "cheat"（失败不 return，而是强制重试直到成功或作弊）
 
-default cheat_count = 0
 # 测试用：为 True 时用半透明色标出计分区域（默认关闭）
 default show_hit_debug = False
 
@@ -106,7 +105,7 @@ init python:
 
         # 成功：≥80%
         if score >= 80.0:
-            ooc_add(-20)
+            add_ooc(-20)
             renpy.notify("OOC 值大幅降低（-20）")
             renpy.hide_screen("hanzi_trace")
             renpy.return_statement("success")
@@ -114,7 +113,7 @@ init python:
 
         # 失败：<60%
         if score < 60.0:
-            ooc_add(10)
+            add_ooc(10)
             renpy.notify("字迹歪歪扭扭（OOC +10），重写！")
             _hanzi_reset()
             return
@@ -136,7 +135,7 @@ init python:
         """一键开挂的副作用：OOC、通知、计数（界面由 Return 关闭）"""
         global cheat_count
         cheat_count += 1
-        ooc_add(-50)
+        add_ooc(-50)
         renpy.notify("外挂生效：自动完成（OOC -50）")
 
     def _hanzi_overtime_tick():
@@ -154,7 +153,7 @@ init python:
 
         can_add = min(5, 30 - scr.scope["overtime_added"])
         scr.scope["overtime_added"] += can_add
-        ooc_add(can_add)
+        add_ooc(can_add)
 
         if ooc >= 70:
             renpy.notify("OOC 已超过 70：进入危险区，重新开始该环节！")

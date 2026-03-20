@@ -1,25 +1,21 @@
-## ooc.rpy
-## 管理 OOC（Out-of-Character / 出戏度）变量
-## 范围：0 ~ 100，由选项与小游戏结果增减，影响最终结局
-
-# 当前周目 OOC 值，新游戏时重置，会随存档保存
-default ooc = 0
-
-#ooc 上下限
-define OOC_MIN = 0
-define OOC_MAX = 100
+default ooc = 20
+default cheat_count = 0
 
 init python:
-    def set_ooc(value: int):
+    def set_ooc(value):
+        """绝对值设置 OOC"""
         global ooc
-        if value < OOC_MIN:
-            ooc = OOC_MIN
-        elif value > OOC_MAX:
-            ooc = OOC_MAX
-        else:
-            ooc = value
+        ooc = max(0, min(100, value))
+        check_ooc_death()
 
-    def ooc_add(amount: int):
-        """增减 OOC，自动限制在 [OOC_MIN, OOC_MAX]"""
+    def add_ooc(amount):
+        """相对增减 OOC (正数为增加，负数为减少)，避免Screen提前求值陷阱"""
         global ooc
-        ooc = max(OOC_MIN, min(OOC_MAX, ooc + amount))
+        ooc = max(0, min(100, ooc + amount))
+        check_ooc_death()
+
+    def check_ooc_death():
+        """将死亡检测独立，避免在Screen执行环境中的栈残留"""
+        global ooc
+        if ooc >= 100:
+            renpy.jump("be")

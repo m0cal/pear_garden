@@ -64,13 +64,16 @@ label scene_3:
     menu:
         "国舅爷息怒！小的方才走神了，罪该万死！您有何吩咐，小的赴汤蹈火在所不辞！":
             h "老子让你想办法！"
-            $ set_ooc(ooc + 10)
+            $ set_ooc(ooc - 10) # [修复] 顺从选项应降低 OOC
         "国舅爷！强抢民女乃是不义之举，您怎能如此蛮不讲理？":
             if ooc < 50:
-                $ set_ooc(ooc + 35)
+                $ set_ooc(ooc + 25) # 增加惩罚值
                 jump fail_to_answer
             else:
+                $ set_ooc(100) # 强制拉满触发BE
                 jump be
+
+label scene_3_after_first_menu:
 
     "我得想办法保命，还得救兰贵金..."
     "有了！与其阻拦他，不如帮他做个伪证。若把伪证做得 “太完美” ，反而留下破绽！"
@@ -85,6 +88,7 @@ label scene_3:
     call screen hanzi_trace
     $ _skipping = True
     if _return == "success":
+        play displayable vid_contract_unfold
         show item_contract_evidence at center
         with dissolve
         p1 "这婚书……不仅要写得真，更要留下致命的破绽。"
@@ -103,3 +107,16 @@ label scene_3:
     "明天就是升堂的日子。"
     "在这之前我还有一些事情要做..."
     "去找知县张清。"
+
+# [修复] 补全缺失的标签和二次选择逻辑（对应策划文档）
+label fail_to_answer:
+    h "（拔刀相向）你今日鬼话连篇，敢教训本国舅？受死吧！"
+    menu:
+        "（继续争辩）我所言句句属实，你这样迟早自食恶果！":
+            $ set_ooc(100) # OOC拉满，直接死
+            jump be
+        "（紧急求饶）国舅爷饶命！小的一时糊涂胡言乱语，您大人有大量，饶了小的这一次！":
+            $ set_ooc(ooc - 10) # 挽回部分OOC
+            h "哼！下次再敢胡言，定不饶你！"
+            # 剧情接回正轨
+            jump scene_3_after_first_menu

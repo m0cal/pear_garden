@@ -11,16 +11,18 @@ label scene_5:
     # 黑屏
     "县衙公堂。"
     "今天就是尘埃落定的日子。"
+
+    # 县衙背景
+    z "升堂！"
     show magistrate_normal at center
     with dissolve
     show h_normal at left
     with dissolve
-
-    # 县衙背景
-    z "升堂！"
     y "升——堂——"
 
     z "堂下何人？报上名来！"
+    show lan_normal at right
+    with dissolve
     s "生员兰中玉，系本县庠生，今日冒渎虎威，非为私利，实因家门不幸，遭遇横祸，特来向大人求一纸公道！"
     h "县尊请了，本人洪彦龙，家姐便是宫里的贵妃。论理，你我本是同僚，今日不过是因为家宅一点琐事，闹到了大人堂前。本人这厢给大人一个面子，亲自走这一趟，咱们把话说开便是。"
     
@@ -28,8 +30,6 @@ label scene_5:
     
     z "兰中玉，你且将此事经过，从实招来！"
 
-    show lan_normal at right
-    with dissolve
     s "生员素来谨守「礼义廉耻」四字。不料竟被被告破门劫掠掳走舍妹，威逼成亲。我兄妹不从，他又私设牢狱，将生员囚于府中。"
     s "生员今日不仅是为舍妹求公道，更是为本县的圣人之教、纲常法纪求公道！被告洪公，读圣贤书，却行禽兽事，光天化日之下夺人妻女，此风一开，我县斯文扫地，纲常何在......"
 
@@ -42,6 +42,7 @@ label scene_5:
     h "本爷看这当哥哥的之所以闹事，不过是嫌银子没给够，想坐地起价罢了！因此才把他请来府中晓之以理。"
 
     h "贾师爷，把那小子亲笔所写的婚书拿来！"
+    play displayable vid_contract_unfold
     show item_contract_evidence at center
     with dissolve
 

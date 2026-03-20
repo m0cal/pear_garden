@@ -20,6 +20,7 @@ image item_contract_evidence = "images/item_contract_evidence.png"
 image lan_normal = "images/lan_normal.png"
 image magistrate_normal = "images/magistrate_normal.png"
 image h_normal = "images/hong_normal.png"
+image vid_contract_unfold = Movie(play="videos/contract_unfold.webm")
 
 label scene_1:
     scene bg lovelyhome

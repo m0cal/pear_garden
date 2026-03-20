@@ -1,4 +1,4 @@
-label fail_to_answer:
+label fail_to_answer_legacy:
     # 用于没有正确回答洪彦龙的提问
     h "你说什么？！"
     h "你是想要和我作对吗？"

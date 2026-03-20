@@ -187,7 +187,7 @@ init python:
                                     # 检查是否撞到家丁敌人
                                     if (grid_x, grid_y) in self.enemies:
                                         # 加 10 点 OOC 并通过 notify 提示玩家
-                                        store.set_ooc(store.ooc + 10)
+                                        store.add_ooc(10)
                                         renpy.notify("撞见家丁了！OOC +10，迷宫已重置！")
                                         # 撞到敌人后重置迷宫并中断当前画线
                                         self.init_maze()
