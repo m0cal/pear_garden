@@ -36,7 +36,7 @@ label scene_4:
     scene bg county_study
     with dissolve
     "我走进张清的书房，他正在书案后坐着，手里捧着一卷书。"
-    show magistrate normal at center
+    show magistrate normal at left
     with dissolve
 
     z "你是洪彦龙的师爷？"

@@ -15,7 +15,6 @@ label scene_5:
 
     # 县衙背景
     z "升堂！"
-    show magistrate normal at center
     with dissolve
     show h normal at left
     with dissolve
