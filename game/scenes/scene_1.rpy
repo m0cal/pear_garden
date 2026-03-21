@@ -54,10 +54,19 @@ label scene_1:
     p "我早吃过了，后台点心多着呢。快吃，吃了才有力气。等哥成了角儿，天天给你买肉包子。"
     hide item_bun
 
+    show lotus normal at right
+    with dissolve
+    
+    show lotus_handkerchief at center
+    with dissolve
+    
+    l "哥，这是我新绣的手帕，你看这莲花……"
+    
     # 咳嗽声
 
     l "【剧烈咳嗽】"
     "她急忙用手帕捂住嘴，摊开时，帕角已晕开一抹刺目的红。"
+    hide lotus_handkerchief
     show item_handkerchief_blood at center
     with dissolve
 
@@ -68,3 +77,5 @@ label scene_1:
     l "没事的，哥 …… 我今天好多了。"
 
     "药罐早就空了。再不断药，她熬不过这个冬天..."
+
+return

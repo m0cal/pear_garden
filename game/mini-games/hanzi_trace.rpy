@@ -6,7 +6,7 @@ default show_hit_debug = False
 
 init python:
     import time
-    import pygame
+    import pygame_sdl2 as pygame
     # 计分区域：(x1,y1,x2,y2) 1920x1080，全部收在“婚”“书”笔画内，不超出字外。
     HANZI_BOXES = [
         # ——“婚”字——
@@ -130,6 +130,7 @@ init python:
         scr.scope["start_t"] = time.time()
         scr.scope["elapsed"] = 0.0
         scr.scope["overtime_added"] = 0
+        renpy.restart_interaction()
 
     def _hanzi_cheat_do():
         """一键开挂的副作用：OOC、通知、计数（界面由 Return 关闭）"""
@@ -155,7 +156,7 @@ init python:
         scr.scope["overtime_added"] += can_add
         add_ooc(can_add)
 
-        if ooc >= 70:
+        if store.ooc >= 70:
             renpy.notify("OOC 已超过 70：进入危险区，重新开始该环节！")
             _hanzi_reset()
 

@@ -91,10 +91,9 @@ label scene_3_after_first_menu:
         $ renpy.movie_cutscene("videos/contract_unfold.webm")
         show item_contract_evidence at center
         with dissolve
+    
+    if _return == "success" or _return == "cheat":
         p1 "这婚书……不仅要写得真，更要留下致命的破绽。"
-    elif _return == "cheat":
-        # 接：同成功反馈（外挂次数与 OOC 已在 hanzi_trace 中处理）
-        pass
 
     p1 "国舅爷，咱们还得加上一句：秀才兰中玉立此为证！"
 
@@ -107,6 +106,13 @@ label scene_3_after_first_menu:
     "明天就是升堂的日子。"
     "在这之前我还有一些事情要做..."
     "去找知县张清。"
+    
+    scene cg_lan_mother
+    with fade
+    "夜色沉沉，兰母披发赤足奔至县衙门前，一声惊堂鼓震得街巷尽醒。"
+    
+    scene bg_lan_mother
+    with fade
     return
 
 # [修复] 补全缺失的标签和二次选择逻辑（对应策划文档）
