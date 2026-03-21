@@ -3,6 +3,7 @@ define p1 = Character("贾斯文", color="#a52a2a")
 define z = Character("张清")
 define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
+image bg county_court = "images/bg_county_court.jpg"
 
 label scene_5:
     scene bg county_court
