@@ -1,7 +1,6 @@
 define l = Character('小莲', color="#c8a2c8")
 define p = Character('我', color="#a52a2a")
 
-image lotus_weak = "images/lotus_weak.jpg"
 image lotus_handkerchief = "images/lotus_handkerchief.png"
 image bg hong_living = "images/bg_hong_livingroom.jpg"
 image bg county_night = "images/bg_county_office_night.jpg"
@@ -15,7 +14,6 @@ image y normal = "images/yayi_normal.png"
 image lan normal = "images/lan_normal.png"
 image magistrate normal = "images/magistrate_normal.png"
 image bg county_court = "images/bg_county_study.jpg"
-image cg_lan_mother = "images/cg_lan_mother.jpg"
 image item_book = "images/item_book.png"
 image item_book_blood = "images/item_book_blood.png"
 image item_handkerchief_blood = "images/item_handkerchief_blood.png"
@@ -35,8 +33,6 @@ label scene_1:
 
     "她听见动静，挣扎着想坐起来，却引发了一阵撕心裂肺的咳嗽。"
     # 震动效果，音效
-    scene lotus_weak
-    with dissolve
 
     l "哥...你回来了？"
 

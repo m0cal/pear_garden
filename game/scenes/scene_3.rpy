@@ -100,7 +100,7 @@ label scene_3_after_first_menu:
 
     h "妙！妙啊！贾师爷果然一肚子坏水！重重有赏！"
 
-    scene cg_lan_mother
+    scene bg_lan_mother
     with fade
     "夜色沉沉，兰母披发赤足奔至县衙门前，一声惊堂鼓震得街巷尽醒。"
     "几天后，听说兰中玉被绑架的兰母到县衙击鼓报了案。"
