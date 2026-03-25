@@ -24,5 +24,6 @@ label scene_2:
 
     "【戏台上的灯火突然扭曲，化作金色的漩涡。那本无字书仿佛一只眼睛，缓缓睁开...】"
     hide item_book_blood
+    $ renpy.movie_cutscene("videos/time_travel.webm")
 
 return

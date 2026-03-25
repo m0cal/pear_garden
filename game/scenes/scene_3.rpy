@@ -88,7 +88,7 @@ label scene_3_after_first_menu:
     call screen hanzi_trace
     $ _skipping = True
     if _return == "success":
-        $ renpy.movie_cutscene("videos/contract_unfold.webm")
+        $ renpy.movie_cutscene("videos/write_contract.webm") # 替换为新生成的书写视频
         show item_contract_evidence at center
         with dissolve
     

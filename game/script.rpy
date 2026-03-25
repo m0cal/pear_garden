@@ -11,6 +11,9 @@
 
     call scene_3 from _call_scene_3
 
+    # 播放夜间潜伏第一人称转场视频
+    $ renpy.movie_cutscene("videos/night_stealth.webm")
+
     # call 躲避家丁游戏
     call screen maze_game
     call scene_4 from _call_scene_4
