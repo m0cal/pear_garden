@@ -7,6 +7,30 @@ default show_hit_debug = False
 init python:
     import time
     import pygame_sdl2 as pygame
+
+    HANZI_BGM_PATH = "audio/bgm_hanzi_trace.mp3"
+
+    def _hanzi_music_enter():
+        """
+        进入婚书小游戏时切换 BGM。
+        - 记录当前 music 声道正在播放的文件到 store._hanzi_prev_bgm
+        - 播放婚书小游戏专用 BGM（存在才播）
+        """
+        try:
+            store._hanzi_prev_bgm = renpy.music.get_playing(channel="music")
+        except Exception:
+            store._hanzi_prev_bgm = None
+
+        if renpy.loadable(HANZI_BGM_PATH):
+            renpy.music.play(HANZI_BGM_PATH, channel="music", loop=True, fadein=0.5)
+
+    def _hanzi_music_exit():
+        """离开婚书小游戏时恢复进入前的 BGM（若无则停止 music）。"""
+        prev = getattr(store, "_hanzi_prev_bgm", None)
+        if prev:
+            renpy.music.play(prev, channel="music", loop=True, fadein=0.5)
+        else:
+            renpy.music.stop(channel="music", fadeout=0.5)
     # 计分区域：(x1,y1,x2,y2) 1920x1080，全部收在“婚”“书”笔画内，不超出字外。
     HANZI_BOXES = [
         # ——“婚”字——
@@ -103,14 +127,6 @@ init python:
 
         score = _hanzi_score(scr)
 
-        # 成功：≥80%
-        if score >= 80.0:
-            add_ooc(-20)
-            renpy.notify("OOC 值大幅降低（-20）")
-            renpy.hide_screen("hanzi_trace")
-            renpy.return_statement("success")
-            return
-
         # 失败：<60%
         if score < 60.0:
             add_ooc(10)
@@ -120,6 +136,11 @@ init python:
 
         # 60%~79%：不算失败，提示继续写
         renpy.notify("还差一点（≥80% 才算完成），继续描红。")
+
+    def _hanzi_success_do():
+        """提交成功时的一次性副作用（不要在别处重复扣 OOC）。"""
+        add_ooc(-20)
+        renpy.notify("OOC 值大幅降低（-20）")
 
     def _hanzi_reset():
         scr = renpy.get_screen("hanzi_trace")
@@ -166,8 +187,8 @@ screen hanzi_trace():
     tag hanzi_trace
 
     # 进入小游戏时禁用快进、隐藏快捷菜单，离开时恢复
-    on "show" action Function(_hanzi_disable_skip)
-    on "hide" action Function(_hanzi_enable_skip)
+    on "show" action [Function(_hanzi_disable_skip), Function(_hanzi_music_enter)]
+    on "hide" action [Function(_hanzi_enable_skip), Function(_hanzi_music_exit)]
 
     # 每 0.1 秒强制关闭快进（防止进入前已开启或误触）
     timer 0.1 repeat True action Function(_hanzi_disable_skip)
@@ -229,6 +250,15 @@ screen hanzi_trace():
         yalign 0.95
         spacing 20
         textbutton "重写(清空)" action Function(_hanzi_reset)
-        textbutton "提交" action Function(_hanzi_submit)
+        # 直接用当前贴合度判断是否成功，成功则立刻 Return("success")，避免多次点击才能触发。
+        # 注意：hit 更新来自 timer 采样，提交前先强制采样一次，避免需要点两次。
+        textbutton "提交" action [
+            Function(_hanzi_sample_mouse),
+            If(
+                (len(hit) * 100.0 / len(HANZI_BOXES)) >= 80.0,
+                [Function(_hanzi_success_do), Return("success")],
+                Function(_hanzi_submit)
+            ),
+        ]
 
     # 不再用 key 拦截点击，改由 timer 轮询鼠标状态，按钮可正常响应

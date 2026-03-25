@@ -20,11 +20,21 @@ image item_handkerchief_blood = "images/item_handkerchief_blood.png"
 image item_bun = "images/item_bun.png"
 image item_contract_evidence = "images/item_contract_evidence.png"
 image vid_contract_unfold = Movie(play="videos/contract_unfold.webm")
+define audio_door_open = "audio/door_open.mp3"
+define audio_cough = "audio/cough.mp3"
+init:
+  transform cam_shake:
+      xoffset 0 yoffset 0
+      linear 0.15 xoffset -16
+      linear 0.15 xoffset 16
+      linear 0.15 xoffset -14
+      linear 0.15 xoffset 14
+      linear 0.15 xoffset 0
 
 label scene_1:
     scene bg lovelyhome
     "我揣着怀里尚带余温的半个窝头，推开那扇吱呀作响的破木门时，天色已近黄昏。"
-    # 门的声音，环境音
+    play sound audio_door_open
     
     # BGM
     "屋内昏暗，只有一缕残阳从窗纸的破洞漏进来，恰好照在墙角那张铺着干草的“床”上。小莲蜷缩在那里，身上盖着件打满补丁的旧戏服——那是师父看我可怜赏的，如今成了她唯一的御寒之物。"
@@ -32,6 +42,13 @@ label scene_1:
     l "哥..."
 
     "她听见动静，挣扎着想坐起来，却引发了一阵撕心裂肺的咳嗽。"
+    play sound audio_cough
+    show layer master at cam_shake
+    pause 1.8
+    show layer master at cam_shake
+    pause 1.8
+    show layer master at cam_shake
+
     # 震动效果，音效
 
     l "哥...你回来了？"
@@ -62,7 +79,12 @@ label scene_1:
     
     l "哥，这是我新绣的手帕，你看这莲花……"
     
-    # 咳嗽声
+    play sound audio_cough
+    show layer master at cam_shake
+    pause 1.8
+    show layer master at cam_shake
+    pause 1.8
+    show layer master at cam_shake
 
     l "【剧烈咳嗽】"
     "她急忙用手帕捂住嘴，摊开时，帕角已晕开一抹刺目的红。"

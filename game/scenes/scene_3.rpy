@@ -2,8 +2,24 @@ define p1 = Character("贾斯文", color="#a52a2a")
 define a = Character("未知", color="#808080")
 define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
-
+define audio_bgm_study = "audio/bgm_study.mp3"
+define audio_cold_laugh = "audio/cold_laugh.mp3"
+define audio_drag = "audio/drag.mp3"
+define audio_table = "audio/slap_table.mp3"
+define audio_hard_drum = "audio/hard_drum.wav"
+define audio_wind = "audio/wind.mp3"
+init:
+    transform cam_shake:
+        xoffset 0 yoffset 0
+        linear 0.05 xoffset -12
+        linear 0.05 xoffset 12
+        linear 0.05 xoffset -10
+        linear 0.05 xoffset 10
+        linear 0.05 xoffset 0
+        
+    
 label scene_3:
+    stop music fadeout 0.1
     scene bg hong_living
     with fade
 
@@ -28,6 +44,8 @@ label scene_3:
     # 看向自己
     "那个狗头军师贾斯文？"
     # 震动特效 出场音乐
+    play music audio_bgm_study fadein 1.0 loop
+    show layer master at cam_shake
     h "你那妹妹兰贵金，容貌清秀，举止娴静，倒是个难得的好模样。"
     h "本国舅一时欢喜，起了收她入府的念头，也算抬举你兰家门楣。"
     h "这等好事，你还有什么不愿意的？"
@@ -37,7 +55,7 @@ label scene_3:
     s "国舅爷抬爱，草民惶恐。只是舍妹出身寒门，不通礼数，亦无福分，实不敢高攀国舅府门。此事，还请国舅爷另择良配。"
 
     # 冷笑
-
+    play sound audio_cold_laugh
     h "另择？你是在教本国舅做事不成？"
     h "【走到兰中玉面前】"
     h "我洪彦龙堂堂当朝国舅，肯开口，已是你兰家祖宗积了八辈子德才换来的天大造化。"
@@ -55,7 +73,9 @@ label scene_3:
 
     s "草民不敢从命！"
     # 震动特效 拖走和拍桌子的声音
-
+    show layer master at cam_shake
+    play sound audio_drag
+    play sound audio_table
     h "呸！什么东西！给他三分颜色，他还真当自己这根穷骨头撑得起门楣了？！"
 
     h "【转向你】贾斯文！你也是个废物东西！"
@@ -86,11 +106,20 @@ label scene_3_after_first_menu:
 
     $ _skipping = False
     call screen hanzi_trace
-    $ _skipping = True
     if _return == "success":
         $ renpy.movie_cutscene("videos/write_contract.webm") # 替换为新生成的书写视频
         show item_contract_evidence at center
         with dissolve
+        $ renpy.notify("OOC 值大幅降低（-20）")
+        $ renpy.pause(0.3, hard=True)
+    elif _return == "cheat":
+        $ renpy.notify("外挂生效：自动完成（OOC -50）")
+        $ renpy.pause(0.3, hard=True)
+    $ _skipping = True
+    # if _return == "success":
+    #     $ renpy.movie_cutscene("videos/contract_unfold.webm")
+    #     show item_contract_evidence at center
+    #     with dissolve
     
     if _return == "success" or _return == "cheat":
         p1 "这婚书……不仅要写得真，更要留下致命的破绽。"
@@ -101,7 +130,9 @@ label scene_3_after_first_menu:
 
     scene bg_lan_mother
     with fade
+    play music audio_wind fadein 1.0 loop
     "夜色沉沉，兰母披发赤足奔至县衙门前，一声惊堂鼓震得街巷尽醒。"
+    play sound audio_hard_drum
     "几天后，听说兰中玉被绑架的兰母到县衙击鼓报了案。"
     "明天就是升堂的日子。"
     "在这之前我还有一些事情要做..."
