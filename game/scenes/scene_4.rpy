@@ -5,7 +5,7 @@ define z = Character("张清")
 label scene_4:
     scene bg county_night
     with fade
-
+    play music audio_wind fadein 1.0 loop
     "知县张清据说为人刚正不阿。"
     "如果我能在审判前主动揭发洪彦龙的罪行，或许兰家兄妹就能逃脱这个恶魔的魔爪。"
     "我整理了一下斗篷，从阴影中走出。"

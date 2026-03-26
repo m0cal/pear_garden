@@ -22,6 +22,7 @@ image item_contract_evidence = "images/item_contract_evidence.png"
 image vid_contract_unfold = Movie(play="videos/contract_unfold.webm")
 define audio_door_open = "audio/door_open.mp3"
 define audio_cough = "audio/cough.mp3"
+define audio_scene1_bgm = "audio/scene1_bgm.mp3"
 init:
   transform cam_shake:
       xoffset 0 yoffset 0
@@ -33,16 +34,20 @@ init:
 
 label scene_1:
     scene bg lovelyhome
-    "我揣着怀里尚带余温的半个窝头，推开那扇吱呀作响的破木门时，天色已近黄昏。"
+    play music audio_scene1_bgm loop
     play sound audio_door_open
+    voice "audio/voice/scene1/b_1_1.mp3"
+    "我揣着怀里尚带余温的半个窝头，推开那扇吱呀作响的破木门时，天色已近黄昏。"
     
-    # BGM
+    voice "audio/voice/scene1/b_1_2.mp3"
+
     "屋内昏暗，只有一缕残阳从窗纸的破洞漏进来，恰好照在墙角那张铺着干草的“床”上。小莲蜷缩在那里，身上盖着件打满补丁的旧戏服——那是师父看我可怜赏的，如今成了她唯一的御寒之物。"
 
+    voice "audio/voice/scene1/l_1.mp3"
     l "哥..."
-
+    voice "audio/voice/scene1/b_2.mp3"
     "她听见动静，挣扎着想坐起来，却引发了一阵撕心裂肺的咳嗽。"
-    play sound audio_cough
+    voice "audio/voice/scene1/cough_1.mp3"
     show layer master at cam_shake
     pause 1.8
     show layer master at cam_shake
@@ -50,24 +55,25 @@ label scene_1:
     show layer master at cam_shake
 
     # 震动效果，音效
-
+    voice "audio/voice/scene1/l_2.mp3"
     l "哥...你回来了？"
-
+    voice "audio/voice/scene1/b_3.mp3"
     "我心头一紧，几步抢上前去，轻轻拍着她的背。"
     "入手处，隔着薄薄的衣衫，能清晰地摸到她嶙峋的脊骨，像是一把枯柴。"
-
+    voice "audio/voice/scene1/p_1.mp3"
     p "别动，躺着。"
-
+    voice "audio/voice/scene1/b_4.mp3"
     "我努力让自己的声音听起来轻松些，从怀里掏出那半个窝头。"
-
+    voice "audio/voice/scene1/p_2.mp3"
     p "看，今天班主赏的白面窝头，还热乎着呢。"
     show item_bun at center
     with dissolve
-
+    voice "audio/voice/scene1/l_3.mp3"
     l "哥...你吃...我...我不饿..."
 
-    "傻丫头，连撒谎都不会。"
-
+    
+    voice "audio/voice/scene1/p_3.mp3"
+    p "傻丫头，连撒谎都不会。"
     p "我早吃过了，后台点心多着呢。快吃，吃了才有力气。等哥成了角儿，天天给你买肉包子。"
     hide item_bun
 
@@ -77,9 +83,8 @@ label scene_1:
     show lotus_handkerchief at center
     with dissolve
     
-    l "哥，这是我新绣的手帕，你看这莲花……"
     
-    play sound audio_cough
+    voice "audio/voice/scene1/cough_2.mp3"
     show layer master at cam_shake
     pause 1.8
     show layer master at cam_shake
@@ -92,12 +97,15 @@ label scene_1:
     show item_handkerchief_blood at center
     with dissolve
 
+    voice "audio/voice/scene1/p_4.mp3"
     p "小莲！"
     hide item_handkerchief_blood
 
     # 切换立绘
+    voice "audio/voice/scene1/l_4.mp3"
     l "没事的，哥 …… 我今天好多了。"
 
+    voice "audio/voice/scene1/b_5.mp3"
     "药罐早就空了。再不断药，她熬不过这个冬天..."
 
 return

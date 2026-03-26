@@ -3,6 +3,8 @@ define p1 = Character("贾斯文", color="#a52a2a")
 define z = Character("张清")
 define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
+define audio_shengtang = "audio/shengtang.mp3"
+define audio_climax = "audio/bgm_climax.mp3"
 image bg county_court = "images/bg_county_court.jpg"
 
 label scene_5:
@@ -14,12 +16,12 @@ label scene_5:
     "今天就是尘埃落定的日子。"
 
     # 县衙背景
-    z "升堂！"
+    play music audio_shengtang fadein 1.0 loop
     with dissolve
     show h normal at left
     with dissolve
     y "升——堂——"
-
+    play sound audio_climax fadein 1.0 loop
     z "堂下何人？报上名来！"
     show lan normal at right
     with dissolve

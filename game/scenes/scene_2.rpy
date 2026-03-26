@@ -32,9 +32,10 @@ label scene_2:
     # 远处戏台的锣鼓声，后台嘈杂声。
     # 视觉特效 晕头晃脑？
     show layer master at dizzy
-
+    voice "audio/voice/scene1/p_5.mp3"
     "只要能救小莲，让我做什么都行..."
     play sound audio_drum_4
+    voice "audio/voice/scene1/p_6.mp3"
     "哪怕是把命卖给阎王。"
     show layer master
 

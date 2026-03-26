@@ -1,8 +1,11 @@
+
+
 label intro:
 
     scene bg backstage
     
     show player normal at left
+    voice "audio/voice/intro/intro.mp3"
     
     "我叫沈怀瑾，今年二十有余。"
     "是戏班里的人。"
