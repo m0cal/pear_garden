@@ -4,7 +4,11 @@ define z = Character("张清")
 define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
 define audio_shengtang = "audio/shengtang.mp3"
+define audio_shengtang2 = "audio/shengtang2.mp3"
 define audio_climax = "audio/bgm_climax.mp3"
+define audio_jingtangmu = "audio/jingtangmu.mp3"
+define audio_yynuo = "audio/yynuo.mp3"
+define audio_bgm_end = "audio/bgm_end.mp3"
 image bg county_court = "images/bg_county_court.jpg"
 
 label scene_5:
@@ -13,90 +17,115 @@ label scene_5:
 
     # 黑屏
     "县衙公堂。"
+    voice "audio/voice/scene4/n_6.mp3"
     "今天就是尘埃落定的日子。"
 
     # 县衙背景
-    play music audio_shengtang fadein 1.0 loop
+    play music audio_shengtang fadein 1.0
+    queue music audio_shengtang2 loop
     with dissolve
     show h normal at left
     with dissolve
-    y "升——堂——"
+    voice "audio/voice/scene4/ya_6.mp3"
+    y "升堂！升——堂——"
     play sound audio_climax fadein 1.0 loop
+    voice "audio/voice/scene4/z_5.mp3"
     z "堂下何人？报上名来！"
     show lan normal at right
     with dissolve
+    voice "audio/voice/scene4/s_5.mp3"
     s "生员兰中玉，系本县庠生，今日冒渎虎威，非为私利，实因家门不幸，遭遇横祸，特来向大人求一纸公道！"
+    voice "audio/voice/scene4/h_12.mp3"
     h "县尊请了，本人洪彦龙，家姐便是宫里的贵妃。论理，你我本是同僚，今日不过是因为家宅一点琐事，闹到了大人堂前。本人这厢给大人一个面子，亲自走这一趟，咱们把话说开便是。"
     
+    voice "audio/voice/scene4/n_7.mp3"
     "张清看了看洪彦龙，又看了看兰中玉，沉默了片刻。"
     
+    voice "audio/voice/scene4/z_6.mp3"
     z "兰中玉，你且将此事经过，从实招来！"
 
-    s "生员素来谨守「礼义廉耻」四字。不料竟被被告破门劫掠掳走舍妹，威逼成亲。我兄妹不从，他又私设牢狱，将生员囚于府中。"
-    s "生员今日不仅是为舍妹求公道，更是为本县的圣人之教、纲常法纪求公道！被告洪公，读圣贤书，却行禽兽事，光天化日之下夺人妻女，此风一开，我县斯文扫地，纲常何在......"
+    voice "audio/voice/scene4/s_6.mp3"
+    s "生员素来谨守「礼义廉耻」四字。不料竟被被告破门劫掠掳走舍妹，威逼成亲。我兄妹不从，他又私设牢狱，将生员囚于府中。生员今日不仅是为舍妹求公道，更是为本县的圣人之教、纲常法纪求公道！被告洪公，读圣贤书，却行禽兽事，光天化日之下夺人妻女，此风一开，我县斯文扫地，纲常何在......"
 
-    z "够了！"
+    voice "audio/voice/scene4/h_13.mp3"
+    h "够了！"
+    voice "audio/voice/scene4/z_7.mp3"
     z "洪相公，阁下乃是读圣贤书之人，本应为乡里表率。今日为何竟有苦主控告阁下强抢民女、囚禁其兄？这其中莫非有什么「误会」，还请阁下当堂讲明。"
 
-    h "误会？我洪彦龙堂堂当朝国舅，怎么可能会干出这种事来？"
-    h "县尊，兰中玉这小子看准了我家有两分薄财，便血口喷人，本爷虽然不才，但也知道「名正言顺」四个字。"
-    h "这儿有一份前日这小子亲手立下的婚书，白纸黑字写着那家姑娘已经许配给本爷做侧室了，连聘礼都送过两回了。"
-    h "本爷看这当哥哥的之所以闹事，不过是嫌银子没给够，想坐地起价罢了！因此才把他请来府中晓之以理。"
-
-    h "贾师爷，把那小子亲笔所写的婚书拿来！"
+    voice "audio/voice/scene4/h_14.mp3"
+    h "误会？我洪彦龙堂堂当朝国舅，怎么可能会干出这种事来？县尊，兰中玉这小子看准了我家有两分薄财，便血口喷人，本爷虽然不才，但也知道「名正言顺」四个字。这儿有一份前日这小子亲手立下的婚书，白纸黑字写着那家姑娘已经许配给本爷做侧室了，连聘礼都送过两回了。本爷看这当哥哥的之所以闹事，不过是嫌银子没给够，想坐地起价罢了！因此才把他请来府中晓之以理。贾师爷，把那小子亲笔所写的婚书拿来！"
     $ renpy.movie_cutscene("videos/contract_unfold.webm")
     show item_contract_evidence at center
     with dissolve
 
-    "我将那一份「婚书」呈上张清。"
+    voice "audio/voice/scene4/n_8.mp3"
+    "贾斯文将那一份「婚书」呈上张清。"
 
+    voice "audio/voice/scene4/s_7.mp3"
     s "婚书？大人明鉴！小人从未将舍妹许配与被告！这婚书...小人更不会写！这...这必是被告和那师爷捣的鬼！"
     
     "惊堂木被重重拍下。"
+    play sound audio_jingtangmu
+    voice "audio/voice/scene4/z_8.mp3"
     z "公堂之上，岂容尔咆哮喧哗！肃静！"
 
+    voice "audio/voice/scene4/sh_15.mp3"
     p1 "大人请千万看清楚了！这婚书上「立此为证」这白纸黑字写的是清清楚楚！" # 非常重要的一句话喔！
     
     "洪彦龙看了我一眼，一副得意的模样。"
     
+    voice "audio/voice/scene4/h_15.mp3"
     h "确是如我师爷所说，这婚书写的明白，请县尊明鉴。"
 
     "张清突然冷笑一声："
-    z "兰中玉。"
-    z "本县问你——"
-    z "你平日写书，是用「谨立」二字，还是用「立此为证」？"
+    voice "audio/voice/scene4/z_9.mp3"
+    z "兰中玉。本县问你——你平日写书，是用「谨立」二字，还是用「立此为证」？"
     "案上的婚书摊得笔直，落款与措辞的破绽在灯下无所遁形。"
 
+    voice "audio/voice/scene4/n_9.mp3"
     "兰中玉抬起头，一脸疑惑。"
 
+    voice "audio/voice/scene4/s_8.mp3"
     s "小人...不曾记得自己写过「立此为证」。"
     hide item_contract_evidence
     
+    voice "audio/voice/scene4/z_10.mp3"
     z "洪公，你这婚书，用词粗直，更像牙行、保正写的卖契，不像一个秀才的笔墨。"
 
+    voice "audio/voice/scene4/n_10.mp3"
     "豆大的汗珠从洪彦龙的额头上滚落。"
     show h scared at left
     "突然，洪彦龙狞笑起来。"
 
-    h "张清，你是什么意思？这婚书上白纸黑字写着将他妹子许配与我。难道还要对这小子用什么词咬文嚼字？"
-    h "我劝你不要忘了...要是如此本末倒置，颠倒黑白，那便是与我作对，与贵妃作对，与当朝天子作对！到时候你脖子上掉的可就不只是这一顶乌纱帽了——"
+    voice "audio/voice/scene4/h_16.mp3"
+    h "张清，你是什么意思？这婚书上白纸黑字写着将他妹子许配与我。难道还要对这小子用什么词咬文嚼字？我劝你不要忘了...要是如此本末倒置，颠倒黑白，那便是与我作对，与贵妃作对，与当朝天子作对！到时候你头上掉的可就不是这一顶乌纱帽了——"
     show h angry at left
 
     "一声惊堂木响起。"
+    play sound audio_jingtangmu
+    voice "audio/voice/scene4/z_11.mp3"
     z "住嘴！"
     "洪彦龙一下被噎住了..."
+    voice "audio/voice/scene4/h_17.mp3"
     h "张...你...你竟敢！"
-    z "阁下身为国舅，位列乡绅，受国厚恩，不思报效，反而欺行霸市、强抢民女、上欺天子、下压黎民！本县念在贵妃天子在上，本想保全阁下名声，奈何你执迷不悟！"
-    z "此案情理难容，法不能赦，本官先打你五十大板，再行发落！"
-    z "此案情理难容，法不能赦，来人！先打五十大板，再将洪彦龙收监候审，彻查其恶行，按律严惩！"
+    play music audio_bgm_end fadein 1.0 loop
+    voice "audio/voice/scene4/z_12.mp3"
+    z "阁下身为国舅，位列乡绅，受国厚恩，不思报效，反而欺行霸市、强抢民女、上欺天子、下压黎民！本县念在贵妃天子在上，本想保全阁下名声，奈何你执迷不悟！此案情理难容，法不能赦，本官先打你五十大板，再行发落！此案情理难容，法不能赦，来人！先打五十大板，再将洪彦龙收监候审，彻查其恶行，按律严惩！"
+    play sound audio_yynuo
 
+    voice "audio/voice/scene4/n_11.mp3"
     "衙役应声上前，架住瘫软的洪彦龙，棍棒落下，声声震彻公堂，那曾不可一世的国舅爷，终究在王法面前折了腰，伪婚书也被掷于地上，成了他恶行的铁证。"
     hide h angry
+    voice "audio/voice/scene4/z_13.mp3"
     z "兰生员，你今日能沉冤得雪，并非偶然，皆是贾师爷深夜登门，将洪彦龙伪造婚书、强抢民女的始末尽数相告，还献了辨伪之法，此番良善之举，当记一功。"
+    voice "audio/voice/scene4/s_9.mp3"
     s "多谢贾师爷出手相助，师爷大恩大德，晚辈没齿难忘！"
+    voice "audio/voice/scene4/sh_16.mp3"
     p1 "不过是守本心、行正道，不值一提。"
+    voice "audio/voice/scene4/z_14.mp3"
     z "公堂之上，法纪为纲；人间之中，良善为尺。纵有权贵逞凶，亦有义士相扶，更有王法昭彰，这天下的公道，从不会辜负心存善念、坚守正义之人！"
 
+    voice "audio/voice/scene4/n_12.mp3"
     "沈怀瑾从戏中恍然回神，心头的沉郁尽数散去，只觉一股暖意漫遍全身。他望着台下渐亮的天光，忽然懂了，戏里戏外皆是人间，恶人终得恶报，良善自有回响，而这世间最珍贵的，莫过于纵使身处淤泥，也依旧守着本心的那份光亮。"
     return
 

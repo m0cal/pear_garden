@@ -46,6 +46,11 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
+## 当音效或语音播放时，自动压低背景音乐（ducking），避免互相抢占听感。
+define config.emphasize_audio_channels = [ "sound", "voice" ]
+define config.emphasize_audio_volume = 0.35
+define config.emphasize_audio_time = 0.25
+
 
 ## 为了让用户在音效或语音轨道上播放测试音频，请取消对下面一行的注释并设置播放的
 ## 样本声音。
@@ -57,7 +62,8 @@ define config.has_voice = True
 ## 将以下语句取消注释就可以设置标题界面播放的背景音乐文件。此文件将在整个游戏中
 ## 持续播放，直至音乐停止或其他文件开始播放。
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define audio.bgm_menu = "audio/bgm_menu.mp3"
+define config.main_menu_music = audio.bgm_menu
 
 
 ## 转场 ##########################################################################

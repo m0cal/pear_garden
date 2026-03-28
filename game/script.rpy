@@ -1,4 +1,6 @@
 ﻿label start:
+    stop music
+
     show screen ooc_overlay
     call intro from _call_intro
 

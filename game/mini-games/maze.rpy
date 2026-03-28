@@ -1,6 +1,32 @@
 init python:
     import pygame_sdl2 as pygame
     import random
+
+    MAZE_BGM_PATH = "audio/zoumigong.mp3"
+    SUCCESS_SFX_PATH = "audio/success.mp3"
+    FAILURE_SFX_PATH = "audio/failure.mp3"
+
+    def _maze_play_sfx_if_exists(path):
+        if renpy.loadable(path):
+            renpy.sound.play(path)
+
+    def _maze_music_enter():
+        """进入迷宫小游戏时切换 BGM，并记录进入前音乐。"""
+        try:
+            store._maze_prev_bgm = renpy.music.get_playing(channel="music")
+        except Exception:
+            store._maze_prev_bgm = None
+
+        if renpy.loadable(MAZE_BGM_PATH):
+            renpy.music.play(MAZE_BGM_PATH, channel="music", loop=True, fadein=0.5)
+
+    def _maze_music_exit():
+        """离开迷宫小游戏时恢复进入前 BGM（若无则停止 music）。"""
+        prev = getattr(store, "_maze_prev_bgm", None)
+        if prev:
+            renpy.music.play(prev, channel="music", loop=True, fadein=0.5)
+        else:
+            renpy.music.stop(channel="music", fadeout=0.5)
     
     class MazeGame(renpy.Displayable):
         def __init__(self, cols=15, rows=10, cell_size=40, wall_thickness=4, **kwargs):
@@ -186,6 +212,7 @@ init python:
                                     
                                     # 检查是否撞到家丁敌人
                                     if (grid_x, grid_y) in self.enemies:
+                                        _maze_play_sfx_if_exists(FAILURE_SFX_PATH)
                                         # 加 10 点 OOC 并通过 notify 提示玩家
                                         store.add_ooc(10)
                                         renpy.notify("撞见家丁了！OOC +10，迷宫已重置！")
@@ -199,6 +226,7 @@ init python:
                                     # 到达终点，返回 True
                                     if (grid_x, grid_y) == self.end_cell:
                                         self.drawing = False
+                                        _maze_play_sfx_if_exists(SUCCESS_SFX_PATH)
                                         return True
             return None
 
@@ -206,6 +234,9 @@ init python:
 screen maze_game():
     modal True
     zorder 100
+
+    on "show" action Function(_maze_music_enter)
+    on "hide" action Function(_maze_music_exit)
     
     # 遮罩背景
     add Solid("#000000CC")

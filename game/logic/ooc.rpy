@@ -19,4 +19,6 @@ init python:
         if store.ooc >= 100:
             # 先隐藏 HUD，避免跳转 BE 时残留在屏幕上。
             renpy.hide_screen("ooc_overlay")
+            if renpy.loadable("audio/failure2.mp3"):
+                renpy.sound.play("audio/failure2.mp3")
             renpy.jump("be")

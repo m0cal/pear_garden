@@ -2,6 +2,32 @@ default jigsaw_correct_pieces = 0
 
 init python:
     import random
+
+    JIGSAW_BGM_PATH = "audio/pinlianpu.mp3"
+    SUCCESS_SFX_PATH = "audio/success.mp3"
+    FAILURE_SFX_PATH = "audio/failure.mp3"
+
+    def _jigsaw_play_sfx_if_exists(path):
+        if renpy.loadable(path):
+            renpy.sound.play(path)
+
+    def _jigsaw_music_enter():
+        """进入拼图小游戏时切换 BGM，并记录进入前音乐。"""
+        try:
+            store._jigsaw_prev_bgm = renpy.music.get_playing(channel="music")
+        except Exception:
+            store._jigsaw_prev_bgm = None
+
+        if renpy.loadable(JIGSAW_BGM_PATH):
+            renpy.music.play(JIGSAW_BGM_PATH, channel="music", loop=True, fadein=0.5)
+
+    def _jigsaw_music_exit():
+        """离开拼图小游戏时恢复进入前 BGM（若无则停止 music）。"""
+        prev = getattr(store, "_jigsaw_prev_bgm", None)
+        if prev:
+            renpy.music.play(prev, channel="music", loop=True, fadein=0.5)
+        else:
+            renpy.music.stop(channel="music", fadeout=0.5)
     
     def generate_jigsaw_data():
         pieces = []
@@ -56,12 +82,16 @@ init python:
             
             store.jigsaw_correct_pieces += 1
             if store.jigsaw_correct_pieces == 9: # 3x3 共有 9 块
+                _jigsaw_play_sfx_if_exists(SUCCESS_SFX_PATH)
                 return True # 拼图完成，返回 True
         return
 
 screen jigsaw():
     zorder 100
     modal True
+
+    on "show" action Function(_jigsaw_music_enter)
+    on "hide" action Function(_jigsaw_music_exit)
     
     # 初始化数据
     default setup_data = generate_jigsaw_data()
@@ -106,4 +136,4 @@ screen jigsaw():
     # 退出按钮
     textbutton "跳过":
         align (0.95, 0.95)
-        action Return(False)
+        action [Function(_jigsaw_play_sfx_if_exists, FAILURE_SFX_PATH), Return(False)]

@@ -1,8 +1,9 @@
-
+define audio_intro_bgm = "audio/intro.bgm.mp3"
 
 label intro:
 
     scene bg backstage
+    play music audio_intro_bgm loop
     
     show player normal at left
     voice "audio/voice/intro/intro.mp3"

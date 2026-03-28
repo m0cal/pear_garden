@@ -9,6 +9,12 @@ init python:
     import pygame_sdl2 as pygame
 
     HANZI_BGM_PATH = "audio/bgm_hanzi_trace.mp3"
+    SUCCESS_SFX_PATH = "audio/success.mp3"
+    FAILURE_SFX_PATH = "audio/failure.mp3"
+
+    def _play_sfx_if_exists(path):
+        if renpy.loadable(path):
+            renpy.sound.play(path)
 
     def _hanzi_music_enter():
         """
@@ -129,6 +135,7 @@ init python:
 
         # 失败：<60%
         if score < 60.0:
+            _play_sfx_if_exists(FAILURE_SFX_PATH)
             add_ooc(10)
             renpy.notify("字迹歪歪扭扭（OOC +10），重写！")
             _hanzi_reset()
@@ -139,6 +146,7 @@ init python:
 
     def _hanzi_success_do():
         """提交成功时的一次性副作用（不要在别处重复扣 OOC）。"""
+        _play_sfx_if_exists(SUCCESS_SFX_PATH)
         add_ooc(-20)
         renpy.notify("OOC 值大幅降低（-20）")
 
