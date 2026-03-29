@@ -3,6 +3,7 @@ define p1 = Character("贾斯文", color="#a52a2a")
 define z = Character("张清")
 define h = Character("洪彦龙", color="#0000ff")
 define s = Character("兰中玉", color="#ff69b4")
+define s5 = Character("兰中玉", color="#ff69b4", what_yoffset=-12)
 define audio_shengtang = "audio/shengtang.mp3"
 define audio_shengtang2 = "audio/shengtang2.mp3"
 define audio_climax = "audio/bgm_climax.mp3"
@@ -34,7 +35,7 @@ label scene_5:
     show lan normal at right
     with dissolve
     voice "audio/voice/scene4/s_5.mp3"
-    s "生员兰中玉，系本县庠生，今日冒渎虎威，非为私利，实因家门不幸，遭遇横祸，特来向大人求一纸公道！"
+    s5 "生员兰中玉，系本县庠生，今日冒渎虎威，非为私利，实因家门不幸，遭遇横祸，特来向大人求一纸公道！"
     voice "audio/voice/scene4/h_12.mp3"
     h "县尊请了，本人洪彦龙，家姐便是宫里的贵妃。论理，你我本是同僚，今日不过是因为家宅一点琐事，闹到了大人堂前。本人这厢给大人一个面子，亲自走这一趟，咱们把话说开便是。"
     
@@ -45,7 +46,7 @@ label scene_5:
     z "兰中玉，你且将此事经过，从实招来！"
 
     voice "audio/voice/scene4/s_6.mp3"
-    s "生员素来谨守「礼义廉耻」四字。不料竟被被告破门劫掠掳走舍妹，威逼成亲。我兄妹不从，他又私设牢狱，将生员囚于府中。生员今日不仅是为舍妹求公道，更是为本县的圣人之教、纲常法纪求公道！被告洪公，读圣贤书，却行禽兽事，光天化日之下夺人妻女，此风一开，我县斯文扫地，纲常何在......"
+    s5 "生员素来谨守「礼义廉耻」四字。不料竟被被告破门劫掠掳走舍妹，威逼成亲。我兄妹不从，他又私设牢狱，将生员囚于府中。\n生员今日不仅是为舍妹求公道，更是为本县的圣人之教、纲常法纪求公道！被告洪公，读圣贤书，却行禽兽事，光天化日之下夺人妻女，此风一开，我县斯文扫地，纲常何在......"
 
     voice "audio/voice/scene4/h_13.mp3"
     h "够了！"
@@ -62,7 +63,7 @@ label scene_5:
     "贾斯文将那一份「婚书」呈上张清。"
 
     voice "audio/voice/scene4/s_7.mp3"
-    s "婚书？大人明鉴！小人从未将舍妹许配与被告！这婚书...小人更不会写！这...这必是被告和那师爷捣的鬼！"
+    s5 "婚书？大人明鉴！小人从未将舍妹许配与被告！这婚书...小人更不会写！这...这必是被告和那师爷捣的鬼！"
     
     "惊堂木被重重拍下。"
     play sound audio_jingtangmu

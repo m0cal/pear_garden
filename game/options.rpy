@@ -48,7 +48,7 @@ define config.has_voice = True
 
 ## 当音效或语音播放时，自动压低背景音乐（ducking），避免互相抢占听感。
 define config.emphasize_audio_channels = [ "sound", "voice" ]
-define config.emphasize_audio_volume = 0.35
+define config.emphasize_audio_volume = 0.26
 define config.emphasize_audio_time = 0.25
 
 
