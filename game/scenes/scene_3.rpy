@@ -148,7 +148,7 @@ label scene_3_after_first_menu:
     voice "audio/voice/scene3/sh_7.mp3"
     "明天就是升堂的日子。在这之前我还有一些事情要做...去找知县张清。知县张清据说为人刚正不阿。如果我能在审判前主动揭发洪彦龙的罪行，或许兰家兄妹就能逃脱这个恶魔的魔爪。"
     
-    scene cg_lan_mother
+    scene bg_lan_mother
     with fade
     "夜色沉沉，兰母披发赤足奔至县衙门前，一声惊堂鼓震得街巷尽醒。"
     

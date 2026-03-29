@@ -77,10 +77,7 @@ label scene_1:
     p "我早吃过了，后台点心多着呢。快吃，吃了才有力气。等哥成了角儿，天天给你买肉包子。"
     hide item_bun
 
-    show lotus normal at right
-    with dissolve
-    
-    show lotus_handkerchief at center
+    show lotus_handkerchief at right
     with dissolve
     
     
