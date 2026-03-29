@@ -40,6 +40,8 @@ label scene_3:
     a "兰中玉，你可还记得——前些时日，本国舅在城中见你兄妹二人同行。"
     voice "audio/voice/scene2/sh_2.mp3"
     "等等...「本国舅」?这个装扮是...《逼婚记》里的洪彦龙？那我是？那个狗头军师贾斯文？"
+
+    call character
     # 震动特效 出场音乐
     play music audio_bgm_study fadein 1.0 loop
     show layer master at cam_shake
