@@ -117,7 +117,6 @@ label scene_3_after_first_menu:
     voice "audio/voice/scene2/sh_6.mp3"
     p1 "这婚书，不仅要写得真，还要有特定的字，方能显得它喜庆又正式！国舅爷，咱们还得加上一句：秀才兰中玉立此为证！"
 
-    $ _skipping = False
     call screen hanzi_trace
     if _return == "success":
         $ renpy.movie_cutscene("videos/write_contract.webm") # 替换为新生成的书写视频
@@ -128,7 +127,6 @@ label scene_3_after_first_menu:
     elif _return == "cheat":
         $ renpy.notify("外挂生效：自动完成（OOC -50）")
         $ renpy.pause(0.3, hard=True)
-    $ _skipping = True
     # if _return == "success":
     #     $ renpy.movie_cutscene("videos/contract_unfold.webm")
     #     show item_contract_evidence at center

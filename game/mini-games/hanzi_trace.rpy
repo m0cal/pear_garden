@@ -73,14 +73,20 @@ init python:
     if not hasattr(store, "_hanzi_down"):
         store._hanzi_down = False
 
+    # 进入小游戏前的跳读状态快照：退出时恢复，避免强制把剧情留在快进状态。
+    if not hasattr(store, "_hanzi_prev_skipping"):
+        store._hanzi_prev_skipping = False
+
     def _hanzi_disable_skip():
         """婚书小游戏显示时：关闭快进并标记正在小游戏（用于隐藏快捷菜单）"""
+        if not store._in_hanzi_trace:
+            store._hanzi_prev_skipping = bool(getattr(store, "_skipping", False))
         store._skipping = False
         store._in_hanzi_trace = True
 
     def _hanzi_enable_skip():
-        """婚书小游戏关闭时恢复"""
-        store._skipping = True
+        """婚书小游戏关闭时恢复进入前的快进状态"""
+        store._skipping = bool(getattr(store, "_hanzi_prev_skipping", False))
         store._in_hanzi_trace = False
 
     # 可写字区域：仅在此矩形内按下/拖动才描红，之外点击不会触发写字（按钮可正常点）
