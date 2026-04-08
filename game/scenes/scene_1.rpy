@@ -13,6 +13,7 @@ image y suspicious = "images/yayi_suspicious.png"
 image y normal = "images/yayi_normal.png"
 image lan normal = "images/lan_normal.png"
 image magistrate normal = "images/magistrate_normal.png"
+image magistrate stand = "images/magistrate_stand.png"
 image bg county_court = "images/bg_county_study.jpg"
 image item_book = "images/item_book.png"
 image item_book_blood = "images/item_book_blood.png"
@@ -58,8 +59,7 @@ label scene_1:
     voice "audio/voice/scene1/l_2.mp3"
     l "哥...你回来了？"
     voice "audio/voice/scene1/b_3.mp3"
-    "我心头一紧，几步抢上前去，轻轻拍着她的背。"
-    "入手处，隔着薄薄的衣衫，能清晰地摸到她嶙峋的脊骨，像是一把枯柴。"
+    "我心头一紧，几步抢上前去，轻轻拍着她的背。入手处，隔着薄薄的衣衫，能清晰地摸到她嶙峋的脊骨，像是一把枯柴。"
     voice "audio/voice/scene1/p_1.mp3"
     p "别动，躺着。"
     voice "audio/voice/scene1/b_4.mp3"
@@ -73,8 +73,7 @@ label scene_1:
 
     
     voice "audio/voice/scene1/p_3.mp3"
-    p "傻丫头，连撒谎都不会。"
-    p "我早吃过了，后台点心多着呢。快吃，吃了才有力气。等哥成了角儿，天天给你买肉包子。"
+    p "傻丫头，连撒谎都不会。我早吃过了，后台点心多着呢。快吃，吃了才有力气。等哥成了角儿，天天给你买肉包子。"
     hide item_bun
 
     show lotus_handkerchief at right
@@ -88,8 +87,7 @@ label scene_1:
     pause 1.8
     show layer master at cam_shake
 
-    l "【剧烈咳嗽】"
-    "她急忙用手帕捂住嘴，摊开时，帕角已晕开一抹刺目的红。"
+    "【小莲剧烈咳嗽】她急忙用手帕捂住嘴，摊开时，帕角已晕开一抹刺目的红。"
     hide lotus_handkerchief
     show item_handkerchief_blood at center
     with dissolve

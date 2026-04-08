@@ -48,7 +48,7 @@ define config.has_voice = True
 
 ## 当音效或语音播放时，自动压低背景音乐（ducking），避免互相抢占听感。
 define config.emphasize_audio_channels = [ "sound", "voice" ]
-define config.emphasize_audio_volume = 0.26
+define config.emphasize_audio_volume = 0.22
 define config.emphasize_audio_time = 0.25
 
 
@@ -124,6 +124,10 @@ default preferences.text_cps = 0
 ## 默认的自动前进延迟。数字越大，等待时间越长，有效范围为 0 - 30。
 
 default preferences.afm_time = 15
+
+## 默认混音：背景音乐略弱，人声（voice）更突出。
+default preferences.music_volume = 0.72
+default preferences.voice_volume = 1.0
 
 
 ## 存档目录 ########################################################################

@@ -42,7 +42,7 @@ label scene_4:
     with dissolve
     voice "audio/voice/scene3/n_4.mp3"
     "贾斯文走进张清的书房，他正在书案后坐着，手里捧着一卷书。"
-    show magistrate normal at left
+    show magistrate stand at left
     with dissolve
 
     voice "audio/voice/scene3/z_1.mp3"
