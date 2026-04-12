@@ -26,7 +26,7 @@ label scene_3:
 
     # 由暗转明 晕眩
     # 愤怒
-
+    voice "audio/voice/scene3/p_1.mp3"
     "头好晕..."
     "我感觉自己像是被什么东西狠狠地撞了一下，眼前一片模糊。"
     show h normal at left
@@ -41,7 +41,7 @@ label scene_3:
     voice "audio/voice/scene2/sh_2.mp3"
     "等等...「本国舅」?这个装扮是...《逼婚记》里的洪彦龙？那我是？那个狗头军师贾斯文？"
 
-    call character
+    call character from _call_character
     # 震动特效 出场音乐
     play music audio_bgm_study fadein 1.0 loop
     show layer master at cam_shake
@@ -113,7 +113,7 @@ label scene_3_after_first_menu:
     voice "audio/voice/scene2/h_10.mp3"
     h "哦？怎么个伪造法？"
     show h threat at left
-
+    
     voice "audio/voice/scene2/sh_6.mp3"
     p1 "这婚书，不仅要写得真，还要有特定的字，方能显得它喜庆又正式！国舅爷，咱们还得加上一句：秀才兰中玉立此为证！"
 
@@ -150,7 +150,7 @@ label scene_3_after_first_menu:
     
     scene bg_lan_mother
     with fade
-    "夜色沉沉，兰母披发赤足奔至县衙门前，一声惊堂鼓震得街巷尽醒。"
+
     
     scene bg_lan_mother
     with fade

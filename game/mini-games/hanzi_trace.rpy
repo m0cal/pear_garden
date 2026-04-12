@@ -77,6 +77,9 @@ init python:
     if not hasattr(store, "_hanzi_prev_skipping"):
         store._hanzi_prev_skipping = False
 
+    if not hasattr(store, "_in_hanzi_trace"):
+        store._in_hanzi_trace = False
+
     def _hanzi_disable_skip():
         """婚书小游戏显示时：关闭快进并标记正在小游戏（用于隐藏快捷菜单）"""
         if not store._in_hanzi_trace:
