@@ -26,7 +26,7 @@ label scene_3:
 
     # 由暗转明 晕眩
     # 愤怒
-    voice "audio/voice/scene3/p_1.mp3"
+    voice "audio/voice/scene1/p_7.mp3"
     "头好晕..."
     "我感觉自己像是被什么东西狠狠地撞了一下，眼前一片模糊。"
     show h normal at left
@@ -105,7 +105,9 @@ label scene_3:
 
 label scene_3_after_first_menu:
 
+    voice "audio/voice/scene2/sh_4.mp3"
     "我得想办法保命，还得救兰贵金..."
+    voice "audio/voice/scene2/sh_4.mp3"
     "有了！与其阻拦他，不如帮他做个伪证。若把伪证做得 “太完美” ，反而留下破绽！"
     
     voice "audio/voice/scene2/sh_5.mp3"

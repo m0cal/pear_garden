@@ -30,7 +30,7 @@ label scene_5:
     voice "audio/voice/scene4/ya_6.mp3"
     y "升堂！升——堂——"
     play sound audio_climax fadein 1.0 loop
-    voice "audio/voice/scene4/z_5.mp3"
+    play voice "audio/voice/scene4/z_5.mp3" volume 1.2
     z "堂下何人？报上名来！"
     show lan normal at right
     with dissolve
@@ -42,7 +42,7 @@ label scene_5:
     voice "audio/voice/scene4/n_7.mp3"
     "张清看了看洪彦龙，又看了看兰中玉，沉默了片刻。"
     
-    voice "audio/voice/scene4/z_6.mp3"
+    play voice "audio/voice/scene4/z_6.mp3" volume 1.2
     z "兰中玉，你且将此事经过，从实招来！"
 
     voice "audio/voice/scene4/s_6.mp3"
@@ -50,7 +50,7 @@ label scene_5:
 
     voice "audio/voice/scene4/h_13.mp3"
     h "够了！"
-    voice "audio/voice/scene4/z_7.mp3"
+    play voice "audio/voice/scene4/z_7.mp3" volume 1.2
     z "洪相公，阁下乃是读圣贤书之人，本应为乡里表率。今日为何竟有苦主控告阁下强抢民女、囚禁其兄？这其中莫非有什么「误会」，还请阁下当堂讲明。"
 
     voice "audio/voice/scene4/h_14.mp3"
@@ -67,7 +67,7 @@ label scene_5:
     
     "惊堂木被重重拍下。"
     play sound audio_jingtangmu
-    voice "audio/voice/scene4/z_8.mp3"
+    play voice "audio/voice/scene4/z_8.mp3" volume 1.2
     z "公堂之上，岂容尔咆哮喧哗！肃静！"
 
     voice "audio/voice/scene4/sh_15.mp3"
@@ -79,7 +79,7 @@ label scene_5:
     h "确是如我师爷所说，这婚书写的明白，请县尊明鉴。"
 
     "张清突然冷笑一声："
-    voice "audio/voice/scene4/z_9.mp3"
+    play voice "audio/voice/scene4/z_9.mp3" volume 1.2
     z "兰中玉。本县问你——你平日写书，是用「谨立」二字，还是用「立此为证」？"
     "案上的婚书摊得笔直，落款与措辞的破绽在灯下无所遁形。"
 
@@ -90,7 +90,7 @@ label scene_5:
     s "小人...不曾记得自己写过「立此为证」。"
     hide item_contract_evidence
     
-    voice "audio/voice/scene4/z_10.mp3"
+    play voice "audio/voice/scene4/z_10.mp3" volume 1.2
     z "洪公，你这婚书，用词粗直，更像牙行、保正写的卖契，不像一个秀才的笔墨。"
 
     voice "audio/voice/scene4/n_10.mp3"
@@ -104,26 +104,26 @@ label scene_5:
 
     "一声惊堂木响起。"
     play sound audio_jingtangmu
-    voice "audio/voice/scene4/z_11.mp3"
+    play voice "audio/voice/scene4/z_11.mp3" volume 1.2
     z "住嘴！"
     "洪彦龙一下被噎住了..."
     voice "audio/voice/scene4/h_17.mp3"
     h "张...你...你竟敢！"
     play music audio_bgm_end fadein 1.0 loop
-    voice "audio/voice/scene4/z_12.mp3"
+    play voice "audio/voice/scene4/z_12.mp3" volume 1.35
     z "阁下身为国舅，位列乡绅，受国厚恩，不思报效，反而欺行霸市、强抢民女、上欺天子、下压黎民！本县念在贵妃天子在上，本想保全阁下名声，奈何你执迷不悟！此案情理难容，法不能赦，本官先打你五十大板，再行发落！此案情理难容，法不能赦，来人！先打五十大板，再将洪彦龙收监候审，彻查其恶行，按律严惩！"
     play sound audio_yynuo
 
     voice "audio/voice/scene4/n_11.mp3"
     "衙役应声上前，架住瘫软的洪彦龙，棍棒落下，声声震彻公堂，那曾不可一世的国舅爷，终究在王法面前折了腰，伪婚书也被掷于地上，成了他恶行的铁证。"
     hide h angry
-    voice "audio/voice/scene4/z_13.mp3"
+    play voice "audio/voice/scene4/z_13.mp3" volume 1.2
     z "兰生员，你今日能沉冤得雪，并非偶然，皆是贾师爷深夜登门，将洪彦龙伪造婚书、强抢民女的始末尽数相告，还献了辨伪之法，此番良善之举，当记一功。"
     voice "audio/voice/scene4/s_9.mp3"
     s "多谢贾师爷出手相助，师爷大恩大德，晚辈没齿难忘！"
     voice "audio/voice/scene4/sh_16.mp3"
     p1 "不过是守本心、行正道，不值一提。"
-    voice "audio/voice/scene4/z_14.mp3"
+    play voice "audio/voice/scene4/z_14.mp3" volume 1.2
     z "公堂之上，法纪为纲；人间之中，良善为尺。纵有权贵逞凶，亦有义士相扶，更有王法昭彰，这天下的公道，从不会辜负心存善念、坚守正义之人！"
 
     voice "audio/voice/scene4/n_12.mp3"

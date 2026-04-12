@@ -49,7 +49,9 @@ label scene_2:
 
     "【被木头箱子上锋利的木刺划破了手指】"
     hide item_book
-    show item_book_blood at center
+    show item_book_blood:
+        xalign 0.5
+        yalign 0.45
     with dissolve
 
     # 书1
