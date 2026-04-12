@@ -94,7 +94,7 @@ label scene_3:
             h "老子让你想办法！"
             $ set_ooc(ooc - 10) # [修复] 顺从选项应降低 OOC
         "国舅爷！强抢民女乃是不义之举，您怎能如此蛮不讲理？":
-            voice "audio/voice/scene2/sh_4.mp3"
+            voice "audio/voice/scene2/sh_4_1.mp3"
             p1 "国舅爷！强抢民女乃是不义之举，您怎能如此蛮不讲理？"
             if ooc < 50:
                 $ set_ooc(ooc + 25) # 增加惩罚值
@@ -105,9 +105,9 @@ label scene_3:
 
 label scene_3_after_first_menu:
 
-    voice "audio/voice/scene2/sh_4.mp3"
+    voice "audio/voice/scene2/sh_4_2.mp3"
     "我得想办法保命，还得救兰贵金..."
-    voice "audio/voice/scene2/sh_4.mp3"
+    voice "audio/voice/scene2/sh_4_3.mp3"
     "有了！与其阻拦他，不如帮他做个伪证。若把伪证做得 “太完美” ，反而留下破绽！"
     
     voice "audio/voice/scene2/sh_5.mp3"

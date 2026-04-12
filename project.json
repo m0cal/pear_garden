@@ -1,9 +1,7 @@
 {
   "build_update": false,
   "packages": [
-    "pc",
-    "market",
-    "win"
+    "pc"
   ],
   "add_from": true,
   "force_recompile": true,
